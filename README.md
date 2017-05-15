@@ -145,23 +145,23 @@ On attacker machine:
 	
 	(UNA TANTUM) Create new user for PureFTPD (see script setup-ftp.sh) (USER demo, PASS demo1234)
 	
-	groupadd ftgroup
+		groupadd ftgroup
+
+		useradd -g ftpgroup -d /dev/null -s /etc ftpuser
+
+		pure-pw useradd demo -u ftpuser -d /ftphome
+
+		pure-pw mkdb
+
+		cd /etc/pure-ftpd/auth
+
+		ln -s ../conf/PureDB 60pdb
+
+		mkdir -p /ftphome
+
+		chown -R ftpuser:ftpgroup /ftphome
 	
-	useradd -g ftpgroup -d /dev/null -s /etc ftpuser
-	
-	pure-pw useradd demo -u ftpuser -d /ftphome
-	
-	pure-pw mkdb
-	
-	cd /etc/pure-ftpd/auth
-	
-	ln -s ../conf/PureDB 60pdb
-	
-	mkdir -p /ftphome
-	
-	chown -R ftpuser:ftpgroup /ftphome
-	
-	/etc/init.d/pure-ftpd restart
+		/etc/init.d/pure-ftpd restart
 	
 	(UNA TANTUM) chmod 755 setup-ftp.sh
 	
