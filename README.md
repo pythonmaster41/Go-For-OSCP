@@ -49,6 +49,9 @@ Alice needs Bob's help. Since Alice is beyond firewall it is impossible to BOB t
 # Zone Transfer
 
 	dnsrecon -t axfr -d <[DOMAIN]>
+	
+# Nmap
+	nmap -sS -sV -A -O --script="*-vuln-*" --script-args=unsafe=1 <[IP]>
 
 # SMB
 
@@ -453,26 +456,3 @@ Metasploit handlers can be great at quickly setting up Metasploit to be in a pos
 <B>From within nmap:</B>
 	
 	!sh
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Nmap
-	nmap -sS -sV -A -O --script="*-vuln-*" --script-args=unsafe=1 <[IP]>
