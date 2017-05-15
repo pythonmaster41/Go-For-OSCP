@@ -3,28 +3,28 @@
 # Tips
 <b>Enable service on every reboot:</b>
 
-update-rc.d <[service]> enable
+	update-rc.d <[service]> enable
 
 <b>Extract link from html page:</b>
 
-cat index.html | grep "href=" | cut -d "/" -f3| grep "debian.org" | cut -d '"' -f1 | sort -u
+	cat index.html | grep "href=" | cut -d "/" -f3| grep "debian.org" | cut -d '"' -f1 | sort -u
 
 # Netcat
 <b>Interact with application:</b>
 
-nc -nv <[IP]> <[PORT]>
+	nc -nv <[IP]> <[PORT]>
 
 <b>Listener:</b>
 
-nc -nlvp <[PORT]>
+	nc -nlvp <[PORT]>
 
 <b>File transfer (client):</b>
 
-nc -nlvp <[PORT]> > <[FILE]>
+	nc -nlvp <[PORT]> > <[FILE]>
 
 <b>File transfer (server):</b>
 
-nc -nv <[IP]> <[PORT]> < <[FILE_TO_SEND]>
+	nc -nv <[IP]> <[PORT]> < <[FILE_TO_SEND]>
 
 # Bind vs Reverse Shell
 
@@ -48,39 +48,39 @@ Alice needs Bob's help. Since Alice is beyond firewall it is impossible to BOB t
 
 # Zone Transfer
 
-dnsrecon -t axfr -d <[DOMAIN]>
+	dnsrecon -t axfr -d <[DOMAIN]>
 
 # SMB
 
-nbtscan <[SUBNET]>
+	nbtscan <[SUBNET]>
 
-nmap -p139,445 --script smb-enum-users <[SUBNET]>
+	nmap -p139,445 --script smb-enum-users <[SUBNET]>
 
-nmap -p139,445 --script=smb-vuln-* --script-args=unsafe=1 <[SUBNET]>
+	nmap -p139,445 --script=smb-vuln-* --script-args=unsafe=1 <[SUBNET]>
 
-enum4linux
+	enum4linux
 
-smbclient -L <[IP]> -N
+	smbclient -L <[IP]> -N
 
-smbclient \\<[IP]>\share -N
+	smbclient \\<[IP]>\share -N
 
 # SNTP
 
-nmap -p25 <[SUBNET]> --open
+	nmap -p25 <[SUBNET]> --open
 
-nc -nv IP 25
+	nc -nv IP 25
 
-VRFY <[USERNAME]>
+	VRFY <[USERNAME]>
 
 # SNMP
 
 Steps: nmap scan udp 161, create target IP list, create community list file, use onesixtyone + snmpwalk
 
-nmap -sU --open -p161 <[SUBNET]> --open
+	nmap -sU --open -p161 <[SUBNET]> --open
 
-onesixtyone -c community -i <[SMNP_IP_LIST]>
+	onesixtyone -c community -i <[SMNP_IP_LIST]>
 
-snmpwalk -c public -v1 <[IP]> <mib-values>
+	snmpwalk -c public -v1 <[IP]> <mib-values>
 
 Mib-values (for snmpwalk):
 
@@ -107,4 +107,4 @@ Mib-values (for snmpwalk):
 
 
 # Nmap
-nmap -sS -sV -A -O --script="*-vuln-*" --script-args=unsafe=1 <[IP]>
+	nmap -sS -sV -A -O --script="*-vuln-*" --script-args=unsafe=1 <[IP]>
