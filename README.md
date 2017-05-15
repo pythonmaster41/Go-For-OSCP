@@ -74,7 +74,7 @@ Alice needs Bob's help. Since Alice is beyond firewall it is impossible to BOB t
 
 # SNMP
 
-Steps: nmap scan udp 161, create target IP list, create community list file, use onesixtyone + snmpwalk
+<b>Steps: nmap scan udp 161, create target IP list, create community list file, use onesixtyone + snmpwalk</b>
 
 	nmap -sU --open -p161 <[SUBNET]> --open
 
@@ -82,7 +82,7 @@ Steps: nmap scan udp 161, create target IP list, create community list file, use
 
 	snmpwalk -c public -v1 <[IP]> <mib-values>
 
-Mib-values (for snmpwalk):
+<b>Mib-values (for snmpwalk):</b>
 
 	1.3.6.1.2.1.25.1.6.0 System Processes
 
