@@ -262,7 +262,7 @@ On attacker machine:
 
 	upx -9 <[FILE]> (for compression)
 	
-	cp <[FILE]> .
+	cp /usr/share/windows-binaries/exe2bat.exe .
 	
 	wine exe2bat <[FILE]> <[FILE.txt]>
 
