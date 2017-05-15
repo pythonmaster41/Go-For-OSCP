@@ -2,7 +2,6 @@
 
 # Tips
 Enable service on every reboot:
-
 update-rc.d <[service]> enable
 
 Extract link from html page:
