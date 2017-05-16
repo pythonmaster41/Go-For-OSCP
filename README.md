@@ -36,7 +36,7 @@ Don't forget to:
 
 # Bind vs Reverse Shell
 
-<img src="https://raw.github.com/SynAckPwn23/Go-For-OSCP/master/Bind_Reverse_shell.png" width="500"/>
+<img src="https://raw.github.com/SynAckPwn23/Go-For-OSCP/master/Uploads/img/Bind_Reverse_shell.png" width="500"/>
 
 <b>Bind Shell:</b>
 
