@@ -1,5 +1,7 @@
 # Go-For-OSCP
 
+I want to list couple things that I think helped me preparing to take the OSCP course and what I found useful over the course of the labs and exam. If you have any questions, feel free to contact me.
+
 # Tips
 <b>Enable service on every reboot:</b>
 
