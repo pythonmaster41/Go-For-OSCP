@@ -11,11 +11,11 @@ Don't forget to:
 # Tips
 <b>Enable service on every reboot:</b>
 
-	update-rc.d <[service]> enable
+	update-rc.d <[SERVICE]> enable
 
 <b>Extract link from html page:</b>
 
-	cat index.html | grep "href=" | cut -d "/" -f3| grep "debian.org" | cut -d '"' -f1 | sort -u
+	cat index.html | grep "href=" | cut -d "/" -f3| grep "<[DOMAIN]>" | cut -d '"' -f1 | sort -u
 
 # Netcat
 <b>Interact with application:</b>
@@ -36,7 +36,7 @@ Don't forget to:
 
 # Bind vs Reverse Shell
 
-<img src="https://raw.github.com/SynAckPwn23/Go-For-OSCP/master/Bind_Reverse_shell.png" width="500"/>
+<img src="https://raw.github.com/SynAckPwn23/Go-For-OSCP/master/Uploads/img/Bind_Reverse_shell.png" width="500"/>
 
 <b>Bind Shell:</b>
 
