@@ -1,3 +1,5 @@
+[![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
+
 # Go-For-OSCP
 
 I want to share a couple of things that I think helped me preparing the Offensive Security Certified Professional - OSCP certification and what I found useful during the labs and exam. If you have any questions, feel free to contact me.
